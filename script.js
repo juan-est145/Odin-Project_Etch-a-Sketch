@@ -1,5 +1,25 @@
 CreateGrid(16);
 
+document.querySelector(".container").addEventListener("mouseover", (e)=>
+{
+    if(e.target.classList.contains("cell"))
+        e.target.style.background = create_random_color();
+});
+
+document.querySelector("#reset").addEventListener("click", () =>
+{
+    const container = document.querySelector(".container");
+    let answer = NaN;
+    while(isNaN(answer) == true)
+    {
+        answer = prompt("Enter a number between 1 and 100 to resize the grid");
+        if (answer <= 0 || answer > 100)
+            answer = NaN;
+    }
+    while (container.firstChild != null)
+        container.removeChild(container.firstChild);
+    CreateGrid(answer);
+});
 
 function CreateGrid(size) 
 {
@@ -18,11 +38,7 @@ function CreateGrid(size)
     }    
 }
 
-document.querySelector(".container").addEventListener("mouseover", (e)=>
-{
-    if(e.target.classList.contains("cell"))
-        e.target.style.background = create_random_color();
-});
+
 
 function create_random_color()
 {
