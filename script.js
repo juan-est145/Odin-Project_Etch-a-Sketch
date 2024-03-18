@@ -17,3 +17,9 @@ function CreateGrid(size)
         container.appendChild(column);
     }    
 }
+
+document.querySelector(".container").addEventListener("mouseover", (e)=>
+{
+    if(e.target.classList.contains("cell"))
+        e.target.style.background = "blue";
+});
