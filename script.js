@@ -3,7 +3,7 @@ CreateGrid(16);
 document.querySelector(".container").addEventListener("mouseover", (e)=>
 {
     if(e.target.classList.contains("cell"))
-        e.target.style.background = create_random_color();
+        e.target.style.background = CreateRandomColor();
 });
 
 document.querySelector("#reset").addEventListener("click", () =>
@@ -40,7 +40,7 @@ function CreateGrid(size)
 
 
 
-function create_random_color()
+function CreateRandomColor()
 {
     const arrayOfColors = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
